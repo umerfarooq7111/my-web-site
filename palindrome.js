@@ -1,3 +1,24 @@
+function onButtonClick(event){
+    event.preventDefault();
+    
+    var inputStr = document.getElementById("inputStr").value;
+    var result = document.getElementById("result");    
+    var message;
+    
+	if(inputStr === "") {
+        message = "Nothing found!"
+		// console.log("Nothing found!");
+	}
+	else{
+        let isPalindrom = check_palindrome(inputStr);
+        isPalindrom ? message = "Given string is palindrom" : message = "Given string is not palindrom"
+        // console.log(isPalindrom);    
+    }
+    result.innerText = message;
+
+}
+
+
 function check_palindrome( str ){
     let j = str.length -1;
     for( let i = 0 ; i < j/2 ;i++){
