@@ -10,9 +10,15 @@ function onButtonClick(event){
 		// console.log("Nothing found!");
 	}
 	else{
-        let isPalindrom = check_palindrome(inputStr);
-        isPalindrom ? message = "Given string is palindrom" : message = "Given string is not palindrom"
-        // console.log(isPalindrom);    
+        if(inputStr.length > 10){
+            message = "Given string length is greater then 10"
+        }
+        else{
+            let isPalindrom = check_palindrome(inputStr);
+            isPalindrom ? message = "Given string is palindrom" : message = "Given string is not palindrom"
+            // console.log(isPalindrom);
+        }
+        
     }
     result.innerText = message;
 
